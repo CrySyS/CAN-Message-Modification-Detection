@@ -2,15 +2,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import tensorflow as tf
-from modules.scripts.visualization import visualize_signals, log
-from modules.scripts.data_preprocess import load_data, df_from_log
-from modules.scripts.config import TrainedModels
-from modules.scripts.utils import get_group_index_by_signal_name
+from scripts.visualization import visualize_signals, log
+from scripts.data_preprocess import load_data, df_from_log
+from scripts.config import TrainedModels
+from scripts.utils import get_group_index_by_signal_name
 from functools import reduce
-from modules.scripts.datagenerator import MultipleFileGenerator
+from scripts.datagenerator import MultipleFileGenerator
 import json
 import os
-from modules.scripts.config import input_data
+from scripts.config import input_data
 
 
 # -------------------------------- USED FUNCTIONS --------------------------------
@@ -25,7 +25,7 @@ from modules.scripts.config import input_data
 def multistep_predict(model, config, filename, debug_info = False, plot = False, signal_mask = None, save = False):
 
         if signal_mask is None:
-                from modules.scripts.config import signal_mask_path
+                from scripts.config import signal_mask_path
                 signal_mask = signal_mask_path
                 if debug_info:
                         log("Using stored signal mask: " + signal_mask_path)
@@ -393,7 +393,7 @@ def calculate_metrics(test_file, model_config, binary_array, evaluation_window_s
         from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
         # read raw data to get timestamps
-        from modules.scripts.data_preprocess import df_from_log
+        from scripts.data_preprocess import df_from_log
         df_raw = df_from_log(log_file=test_file, raw_data=True) # get only the raw data from the log file
         # display head of dataframe
         if debug_info:
@@ -499,7 +499,7 @@ def calculate_metrics(test_file, model_config, binary_array, evaluation_window_s
         
         from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
         import os
-        from modules.scripts.config import work_dir
+        from scripts.config import work_dir
         import matplotlib.pyplot as plt
 
         if save:

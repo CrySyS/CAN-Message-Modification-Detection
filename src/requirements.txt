@@ -13,3 +13,4 @@ pydot
 pytest
 sktime
 adjustText
+tqdm

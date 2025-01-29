@@ -1,9 +1,9 @@
 
-from modules.scripts.config import Config, work_dir
+from scripts.config import Config, work_dir
 import tensorflow as tf
-from modules.scripts.visualization import log
+from scripts.visualization import log
 import numpy as np
-from modules.scripts.data_preprocess import load_data_part, load_data
+from scripts.data_preprocess import load_data_part, load_data
 from typing import List, Tuple
 from tqdm import tqdm
 import pandas as pd

@@ -3,11 +3,11 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import normalize
 from bitstring import BitArray
-from modules.scripts.config import Config, signal_mask_path, work_dir, signal_mask_path_old_traces
-from modules.scripts.config import interesting_columns as interesting_columns_
-from modules.scripts.visualization import log
-from modules.scripts.visualization import visualize_signals
-from modules.scripts.utils import flatten
+from scripts.config import Config, signal_mask_path, work_dir, signal_mask_path_old_traces
+from scripts.config import interesting_columns as interesting_columns_
+from scripts.visualization import log
+from scripts.visualization import visualize_signals
+from scripts.utils import flatten
 from pandas.core.frame import DataFrame
 from typing import List, Optional, Tuple, Dict
 
@@ -32,7 +32,7 @@ def df_from_log(log_file: str, path_signal_mask: Optional[str]=None, minmaxScale
 
         elif 'old' in path_signal_mask:
                 log("Changing interesting column names back to old ones, due to old signal mask")
-                from modules.scripts.config import old_columns
+                from scripts.config import old_columns
                 interesting_columns = old_columns
         else:
                 interesting_columns = interesting_columns_
@@ -337,7 +337,7 @@ def load_data(filename: str, config: Config, signal_mask: None = None, debug_inf
                 
                 if '0410_1' not in signals:
                         log("Changing column names back to old ones, due to old signal mask")
-                        from modules.scripts.config import column_dict
+                        from scripts.config import column_dict
                         for g, group in enumerate(ID_groups):
                                 new_group = []
                                 for new in group:
@@ -420,7 +420,7 @@ def df_from_log_part(log_file: str, read_from: Optional[int] =None, nrows: Optio
 
         elif 'old' in path_signal_mask:
                 log("Changing interesting column names back to old ones, due to old signal mask")
-                from modules.scripts.config import old_columns
+                from scripts.config import old_columns
                 interesting_columns = old_columns
         else:
                 interesting_columns = interesting_columns_
@@ -671,7 +671,7 @@ def load_data_part(filename: str, read_from:int, read_to:int, config: Config, si
                 
                 if '0410_1' not in signals:
                         log("Changing column names back to old ones, due to old signal mask")
-                        from modules.scripts.config import column_dict
+                        from scripts.config import column_dict
                         for g, group in enumerate(ID_groups):
                                 new_group = []
                                 for new in group:

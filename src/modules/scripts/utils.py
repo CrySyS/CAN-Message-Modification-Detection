@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-from modules.scripts.config import work_data
+from scripts.config import work_data
 
 def batch(iterable, n=1):
     l = len(iterable)

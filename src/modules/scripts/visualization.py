@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 import matplotlib
 import pandas as pd
-from modules.scripts.utils import get_group_index_by_signal_index
+from scripts.utils import get_group_index_by_signal_index
 from matplotlib.lines import Line2D
 from colorsys import rgb_to_hls, hls_to_rgb
 from colorama import Fore, Style
-from modules.scripts.config import work_dir
+from scripts.config import work_dir
 
 def log(title: str, message: str = '', emphasize: bool = False) -> None:
     if message != '':

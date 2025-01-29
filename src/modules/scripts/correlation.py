@@ -11,11 +11,11 @@ import scipy.cluster.hierarchy as spc
 import numpy as np
 from adjustText import adjust_text 
 from matplotlib.colors import ListedColormap
-from modules.scripts.config import output_data
+from scripts.config import output_data
 
 from sklearn.manifold import MDS
-from modules.scripts.config import Config
-from modules.scripts.data_preprocess import load_data
+from scripts.config import Config
+from scripts.data_preprocess import load_data
 from sklearn.utils import check_random_state
 
 # ------------------------------ Colors and output folder ------------------------------
