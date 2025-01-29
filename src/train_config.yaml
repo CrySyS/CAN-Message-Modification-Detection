@@ -1,0 +1,17 @@
+conf1:
+  train_folder: "train/train_input"
+  description: "finalised training configuration"
+  window_size: 1750
+  multistep: 1
+  stride: 1
+  batch_size: 128
+  epochs: 100 #used with early stopping
+  signal_groups: {1: {signals: ['0110_0', '0120_3'],                               units: 64},
+                  2: {signals: ['0110_1', '0110_3', '0120_0', '0120_1'],           units: 64},
+                  3: {signals: ['0120_2'],                                         units: 64},
+                  4: {signals: ['0381_4'],                                         units: 64},
+                  5: {signals: ['0280_0', '0280_1', '0280_2', '0280_3', '0410_0'], units: 64},
+                  6: {signals: ['0290_0'],                                         units: 64},
+                  7: {signals: ['0290_4', '0290_2'],                               units: 64},
+                  8: {signals: ['0290_1', '0410_4'],                               units: 64},
+                  9: {signals: ['0300_4', '0381_6'],                               units: 64}}

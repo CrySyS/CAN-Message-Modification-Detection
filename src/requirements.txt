@@ -1,0 +1,15 @@
+ipykernel
+ipython
+matplotlib
+tensorflow
+pandas
+keras-tcn
+PyYAML
+colorama
+bitstring
+scikit-learn
+tables
+pydot
+pytest
+sktime
+adjustText
